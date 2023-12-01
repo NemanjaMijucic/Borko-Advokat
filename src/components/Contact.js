@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextField, Button, Box } from "@mui/material";
+import { TextField, Button, Box, Typography } from "@mui/material";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -36,12 +36,15 @@ const Contact = () => {
         display: "flex",
         flexDirection: "column",
         maxWidth: "400px",
-        margin: "0 auto",
+        margin: "20px auto",
         backgroundColor: "#f5f5f5",
         padding: "20px",
         borderRadius: "8px",
       }}
     >
+      <Typography variant="h6" textAlign="center">
+        Za sva pitanja slobodno nas kontaktirajte
+      </Typography>
       <form onSubmit={handleSubmit}>
         <TextField
           name="name"

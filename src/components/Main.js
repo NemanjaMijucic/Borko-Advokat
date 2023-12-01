@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
-import {
-  Avatar,
-  Typography,
-  Box,
-  Paper,
-  Grid,
-  TextField,
-  Button,
-} from "@mui/material";
+import { Avatar, Typography, Box, Paper, Grid } from "@mui/material";
+import Contact from "./Contact";
 
 const Main = () => {
   const [showContactForm, setShowContactForm] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 300) {
+      if (window.scrollY > 100) {
+        setShowAbout(true);
+      } else {
+        setShowAbout(false);
+      }
+
+      if (window.scrollY > 200) {
         setShowContactForm(true);
       } else {
         setShowContactForm(false);
@@ -28,7 +28,7 @@ const Main = () => {
   return (
     <Box mt={4}>
       <Grid container justifyContent="center">
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={10}>
           <Paper
             elevation={3}
             style={{
@@ -37,7 +37,7 @@ const Main = () => {
               position: "relative",
             }}
           >
-            <Avatar sx={{ width: 100, height: 100, margin: "0 auto" }}></Avatar>
+            <Avatar sx={{ width: 150, height: 150, margin: "0 auto" }}></Avatar>
             <Typography variant="h5" align="center" mt={2}>
               Borko Advokat
             </Typography>
@@ -47,7 +47,15 @@ const Main = () => {
             <Typography variant="body2" align="center" mt={2}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
               pulvinar arcu eget tincidunt porttitor. Etiam nec massa nec mauris
-              accumsan vulputate sit amet eu velit.
+              accumsan vulputate sit amet eu velit. Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Fusce pulvinar arcu eget tincidunt
+              porttitor. Etiam nec massa nec mauris accumsan vulputate sit amet
+              eu velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Fusce pulvinar arcu eget tincidunt porttitor. Etiam nec massa nec
+              mauris accumsan vulputate sit amet eu velit. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit. Fusce pulvinar arcu eget
+              tincidunt porttitor. Etiam nec massa nec mauris accumsan vulputate
+              sit amet eu velit.
             </Typography>
             <Box mt={2}>
               <Typography variant="subtitle1">Contact Information</Typography>
@@ -57,6 +65,22 @@ const Main = () => {
               <Typography variant="body2">Phone: (123) 456-7890</Typography>
               <Typography variant="body2">Address: 123 Main St</Typography>
             </Box>
+            {showAbout && (
+              <Box>
+                <Typography>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                  pulvinar arcu eget tincidunt porttitor. Etiam nec massa nec
+                  mauris accumsan vulputate sit amet eu velit. Lorem ipsum dolor
+                  sit amet, consectetur adipiscing elit. Fusce pulvinar arcu
+                  eget tincidunt porttitor. Etiam nec massa nec mauris accumsan
+                  vulputate sit amet eu velit. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit. Fusce pulvinar arcu eget
+                  tincidunt porttitor. Etiam nec massa nec mauris accumsan
+                  vulputate sit amet eu velit.
+                </Typography>
+              </Box>
+            )}
+            {showContactForm && <Contact />}
           </Paper>
         </Grid>
       </Grid>
