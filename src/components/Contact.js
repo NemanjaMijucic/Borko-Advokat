@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextField, Button, Box, Typography } from "@mui/material";
+import { TextField, Button, Box, Typography, Paper } from "@mui/material";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -31,72 +31,76 @@ const Contact = () => {
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        maxWidth: "400px",
-        margin: "20px auto",
-        backgroundColor: "#f5f5f5",
-        padding: "20px",
-        borderRadius: "8px",
-      }}
-    >
-      <Typography variant="h6" textAlign="center">
-        Za sva pitanja slobodno nas kontaktirajte
-      </Typography>
-      <form onSubmit={handleSubmit}>
-        <TextField
-          name="name"
-          label="Name"
-          value={formData.name}
-          onChange={handleChange}
-          fullWidth
-          margin="normal"
-          variant="outlined"
-          color="primary"
-        />
-        <TextField
-          name="lastName"
-          label="Last Name"
-          value={formData.lastName}
-          onChange={handleChange}
-          fullWidth
-          margin="normal"
-          variant="outlined"
-          color="primary"
-        />
-        <TextField
-          name="phone"
-          label="Phone"
-          value={formData.phone}
-          onChange={handleChange}
-          fullWidth
-          margin="normal"
-          variant="outlined"
-          color="primary"
-        />
-        <TextField
-          name="message"
-          label="Message"
-          value={formData.message}
-          onChange={handleChange}
-          multiline
-          rows={4}
-          fullWidth
-          margin="normal"
-          variant="outlined"
-          color="primary"
-        />
-        <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          sx={{ marginTop: "16px" }}
-        >
-          Submit
-        </Button>
-      </form>
+    <Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          maxWidth: "400px",
+          margin: "80px auto",
+          backgroundColor: "#f5f5f5",
+          padding: "20px",
+          borderRadius: "8px",
+          padding: "20px",
+        }}
+        mt={6}
+      >
+        <Typography variant="h6" textAlign="center">
+          Za sva pitanja slobodno nas kontaktirajte
+        </Typography>
+        <form onSubmit={handleSubmit}>
+          <TextField
+            name="name"
+            label="Name"
+            value={formData.name}
+            onChange={handleChange}
+            fullWidth
+            margin="normal"
+            variant="outlined"
+            color="primary"
+          />
+          <TextField
+            name="lastName"
+            label="Last Name"
+            value={formData.lastName}
+            onChange={handleChange}
+            fullWidth
+            margin="normal"
+            variant="outlined"
+            color="primary"
+          />
+          <TextField
+            name="phone"
+            label="Phone"
+            value={formData.phone}
+            onChange={handleChange}
+            fullWidth
+            margin="normal"
+            variant="outlined"
+            color="primary"
+          />
+          <TextField
+            name="message"
+            label="Message"
+            value={formData.message}
+            onChange={handleChange}
+            multiline
+            rows={4}
+            fullWidth
+            margin="normal"
+            variant="outlined"
+            color="primary"
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            sx={{ marginTop: "16px" }}
+          >
+            Submit
+          </Button>
+        </form>
+      </Box>
     </Box>
   );
 };
