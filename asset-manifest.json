@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Borko-Advokat/static/css/main.ece0c238.css",
-    "main.js": "/Borko-Advokat/static/js/main.401da053.js",
+    "main.js": "/Borko-Advokat/static/js/main.b576ccb2.js",
     "index.html": "/Borko-Advokat/index.html",
     "main.ece0c238.css.map": "/Borko-Advokat/static/css/main.ece0c238.css.map",
-    "main.401da053.js.map": "/Borko-Advokat/static/js/main.401da053.js.map"
+    "main.b576ccb2.js.map": "/Borko-Advokat/static/js/main.b576ccb2.js.map"
   },
   "entrypoints": [
     "static/css/main.ece0c238.css",
-    "static/js/main.401da053.js"
+    "static/js/main.b576ccb2.js"
   ]
 }
