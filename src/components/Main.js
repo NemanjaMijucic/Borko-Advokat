@@ -1,7 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { Avatar, Typography, Box, Paper, Grid } from "@mui/material";
+import {
+  Avatar,
+  Typography,
+  Box,
+  Paper,
+  Grid,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
 import Contact from "./Contact";
 import Background from "./Background";
+import EmailIcon from "@mui/icons-material/Email";
+import HomeIcon from "@mui/icons-material/Home";
+import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 
 const Main = () => {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -9,13 +23,13 @@ const Main = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 50) {
         setShowAbout(true);
       } else {
         setShowAbout(false);
       }
 
-      if (window.scrollY > 500) {
+      if (window.scrollY > 100) {
         setShowContactForm(true);
       } else {
         setShowContactForm(false);
@@ -27,7 +41,7 @@ const Main = () => {
   }, []);
 
   return (
-    <Box mt={6}>
+    <Box>
       <Grid
         container
         justifyContent="center"
@@ -43,7 +57,7 @@ const Main = () => {
             }}
           >
             <Grid container spacing={4}>
-              <Grid item xs={12} md={8}>
+              <Grid item xs={12} md={7}>
                 <Box
                   sx={{
                     padding: "20px",
@@ -76,7 +90,7 @@ const Main = () => {
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid item xs={12} md={5}>
                 <Box
                   mt={4}
                   sx={{
@@ -86,21 +100,76 @@ const Main = () => {
                   }}
                 >
                   <Typography variant="subtitle1">
-                    Contact Information
+                    Contact Information:
                   </Typography>
-                  <Typography variant="body2">Email:</Typography>
-                  <Typography variant="body2">
-                    borko.advokat@gmail.com
-                  </Typography>
-                  <Typography variant="body2">Phone:</Typography>
-                  <Typography variant="body2"> (123) 456-7890</Typography>
-
-                  <Typography variant="body2">Address: </Typography>
-                  <Typography variant="body2">123 Main St</Typography>
                 </Box>
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <Box></Box>
+                <Box
+                  sx={{
+                    backgroundColor: "#012a4a",
+                    color: "#fff",
+                  }}
+                >
+                  <List>
+                    <ListItem disablePadding>
+                      <ListItemButton>
+                        <ListItemIcon sx={{ color: "#fff" }}>
+                          <PhoneIphoneIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="064/123-4567" />
+                      </ListItemButton>
+                    </ListItem>
+                    <ListItem disablePadding>
+                      <ListItemButton>
+                        <ListItemIcon sx={{ color: "#fff" }}>
+                          <EmailIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="borko.advokat@gmail.com" />
+                      </ListItemButton>
+                    </ListItem>
+                    <ListItem disablePadding>
+                      <ListItemButton>
+                        <ListItemIcon sx={{ color: "#fff" }}>
+                          <HomeIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="123 Main street" />
+                      </ListItemButton>
+                    </ListItem>
+                  </List>
+                </Box>
+                <Box
+                  mt={4}
+                  sx={{
+                    backgroundColor: "#012a4a",
+                    color: "#fff",
+                    padding: "10px",
+                  }}
+                >
+                  <Typography variant="subtitle1">Lorem Ipsum </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    backgroundColor: "#012a4a",
+                    color: "#fff",
+                  }}
+                >
+                  <List component="ul">
+                    <ListItem disablePadding>
+                      <ListItemButton>
+                        <ListItemText primary="- dolor sit amet" />
+                      </ListItemButton>
+                    </ListItem>
+                    <ListItem disablePadding>
+                      <ListItemButton>
+                        <ListItemText primary="- consetetur elit" />
+                      </ListItemButton>
+                    </ListItem>
+                    <ListItem disablePadding>
+                      <ListItemButton>
+                        <ListItemText primary="- vulputate sit amet" />
+                      </ListItemButton>
+                    </ListItem>
+                  </List>
+                </Box>
               </Grid>
             </Grid>
             {showAbout && (

@@ -42,13 +42,13 @@ const Navbar = () => {
       </Typography>
 
       <Box sx={{ display: { xs: "none", sm: "block" } }}>
-        <Button to="/" sx={{ marginRight: 2 }}>
+        <Button to="/" sx={{ marginRight: 2, color: "#fff" }}>
           Home
         </Button>
-        <Button to="/about" sx={{ marginRight: 2 }}>
+        <Button to="/about" sx={{ marginRight: 2, color: "#fff" }}>
           About
         </Button>
-        <Button to="/services" sx={{ marginRight: 2 }}>
+        <Button to="/services" sx={{ marginRight: 2, color: "#fff" }}>
           Contact
         </Button>
       </Box>
